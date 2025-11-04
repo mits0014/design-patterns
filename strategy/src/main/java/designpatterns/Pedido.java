@@ -1,11 +1,12 @@
 package designpatterns;
-
+/*Classe que representa um pedido, utilizando o padrão Strategy para cálculo de frete.
+ Todo pedido tem uma instncia de uma estrategia de frete que pode ser alterada em tempo 
+ de execução, definindo qual será o cálculo utilizada para este pedido.
+ */
 public class Pedido {
-
     private final double pesoKg;
     private final double distanciaKm;
 
-    // Estratégia de frete injetável
     private FreteStrategy estrategiaFrete;
 
     public Pedido(double pesoKg, double distanciaKm) {
@@ -21,7 +22,6 @@ public class Pedido {
         return distanciaKm;
     }
 
-    // Define qual estratégia de frete será usada
     public void setEstrategiaFrete(FreteStrategy estrategiaFrete) {
         this.estrategiaFrete = estrategiaFrete;
     }
